@@ -15,11 +15,11 @@ function getPlayerChoice(round) {
   do {
     playerChoice = prompt(
       `Round ${round}: Choose wisely one of Rock, Paper or Scissors:`
-    );
-		if (playerChoice !== null && playerChoice !== "") {
+		);
+		if (playerChoice !== null && playerChoice.length > 1) {
       playerChoice =
         playerChoice[0].toUpperCase() + playerChoice.substring(1).toLowerCase();
-    } else {
+    } else if (playerChoice === null) {
       return -1;
     }
   } while (!possibilities.includes(playerChoice));
@@ -57,7 +57,7 @@ function playGame() {
   let round = 1; // current round
   let maxRounds = 5; // maxRounds to play
 
-  let playerChoice = "";
+  let playerChoice;
   let computerChoice = "";
   let result = "";
 
@@ -66,7 +66,8 @@ function playGame() {
     if (playerChoice === -1) {
       console.log("Game closed by Player!");
       return;
-    }
+		}
+		
     computerChoice = getComputerChoice();
     console.log((result = playRound(playerChoice, computerChoice)));
 
