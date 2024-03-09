@@ -1,7 +1,7 @@
 const possibilities = ["Rock", "Paper", "Scissors"];
 
 /**
- * Gets the computer's choice out of "Rock", "Paper" or "Scissors" randomly.
+ * Get the computer's choice out of "Rock", "Paper" or "Scissors" randomly.
  * @returns the computer's choice
  */
 function getComputerChoice() {
@@ -10,6 +10,11 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+/**
+ * Get the computer's choice out of "Rock", "Paper" or "Scissors" by a prompt.
+* @param {number} round which round is about to play
+ * @returns the player's choice
+ */
 function getPlayerChoice(round) {
   let playerChoice = "";
   do {
